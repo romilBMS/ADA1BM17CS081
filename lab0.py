@@ -7,4 +7,4 @@ def max():
         if A[i]>max:
             max=A[i]
 
-    print("Maximum number",max)
+    print("Maximum num",max)
