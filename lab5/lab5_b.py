@@ -21,20 +21,20 @@ def BFS(k):
     q.enqueue(k)
     while(q.size()>0):
         x= q.dequeue()
-        for i,ele in enumerate(adjacent[x]):
+        for i in range(len(adjacent[x])):
             if visited[i]==0:
-                q.enqueue(ele)
+                q.enqueue(i)
                 visited[i] = 1
                 print(i)
 
 n=int(input("Enter the number of nodes"))
-# print("Enter adjacency matrix")
-# adjacent=[]
+print("Enter adjacency matrix")
+adjacent=[]
 visited=[0]*n
 q=Queue()
-# for i in range(n):
-#     adjacent.append(list(map(int,input("Enter Row:").split())))
-adjacent=[[0,0,0],[1,0,1],[1,1,1]]
+for i in range(n):
+    adjacent.append(list(map(int,input("Enter Row:").split())))
+# adjacent=[[0,0,0],[1,0,1],[1,1,1]]
 s=int(input("Enter Source vertex:"))
 BFS(s)
 
