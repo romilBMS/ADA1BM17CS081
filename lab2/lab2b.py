@@ -9,4 +9,4 @@ def findkl(A,k):
     return A[n-k:]
 
 A=[2,1,3,6,5,4]
-print(findkl(A,1))
+print(findkl(A,3))
