@@ -36,8 +36,16 @@ def topologicalSort(adjMatrix):
     else:
         print(order)
 def checkIfDone(adjMatrix):
+    # print(adjMatrix)
+    count=0
+    for row in adjMatrix:
+        count+=row.count(0)
     
-    return adjMatrix.count(0)==len(adjMatrix)**2
+    print(count)
+    if count+1== len(adjMatrix)**2:
+        return True
+    else:
+        return False
 
 # def proper_print(adjMatrix):
 #     for row in adjMatrix:
