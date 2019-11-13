@@ -1,6 +1,6 @@
 amount=27
 coins=[1,2,5]
-
+from collections import Counter
 def coinChange(amount,denoms):
     #denoms.sort()
     dp=[[0]*(amount+1) for _ in range(len(coins))]
@@ -21,13 +21,17 @@ def findCoins(dp):
     ans=[]
     i,j=len(dp)-1,len(dp[0])-1
     while i>=0 and j>=0:
-        if dp[i][j]=dp[i-1][j]:
+        if dp[i][j]==dp[i-1][j]:
+            # print("Up")
             i-=1
         else:
-            
+            # print("cross")
+            ans.append(coins[i])
+            j-=coins[i]
+    
 
-
-
+    
+    return dict(Counter(ans))
 
 print(findCoins(coinChange(amount,coins)))
 

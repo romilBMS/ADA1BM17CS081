@@ -42,7 +42,7 @@ def checkIfDone(adjMatrix):
         count+=row.count(0)
     
     print(count)
-    if count+1== len(adjMatrix)**2:
+    if count== len(adjMatrix)**2:
         return True
     else:
         return False

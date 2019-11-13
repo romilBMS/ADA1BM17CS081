@@ -1,10 +1,7 @@
 def solveKP(value, weight, w):
     L=[]
     for i in range(len(weight)):
-        L.append([0]*(w+1))
-    
-
-
+        L.append([0]*(w+1))   
 
 
     for i in range(len(weight)):
@@ -13,6 +10,14 @@ def solveKP(value, weight, w):
                 L[i][j]=max(L[i-1][j], value[i]+L[i-1][j-weight[i]])
             else:
                 L[i][j]=L[i-1][j]
+    # print(L)
+
+    # for i in range(len(weights)):
+    #     for j in range(1,w+1):
+    #         if weights[i] <= j:
+    #             dp[i][j] = max(dp[i-1][j], values[i] + dp[i-1][j-weights[i]])
+    #         else:
+    #             dp[i][j] = dp[i-1][j]
         
     print(L[i][j])
 
